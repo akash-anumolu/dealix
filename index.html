@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealix — We Don't Build Websites. We Engineer Digital Dominance.</title>
+    <meta name="description" content="Dealix is an elite web agency that engineers ultra-modern, conversion-obsessed business websites. We don't do templates. We create digital weapons.">
+    <meta name="keywords" content="premium web design, business website, high-end web agency, conversion website, modern UI UX design India">
+    <link rel="canonical" href="https://dealix.in/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Custom Cursor Styles (inline for performance) -->
+    <style>
+        .custom-cursor {
+            width: 40px;
+            height: 40px;
+            border: 1.5px solid rgba(0, 255, 136, 0.5);
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99990;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            mix-blend-mode: difference;
+        }
+
+        .custom-cursor.cursor-hover {
+            width: 60px;
+            height: 60px;
+            border-color: rgba(0, 255, 136, 0.8);
+            background: rgba(0, 255, 136, 0.05);
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: #00FF88;
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99991;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cursor-dot.dot-hover {
+            transform: scale(0) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page Transition -->
+    <div class="page-transition" id="pageTransition">
+        <span class="loader-text">DEALIX</span>
+    </div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="cursor-dot" id="customCursorDot"></div>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="process.html" class="mobile-nav-link">Process</a>
+        <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+        <a href="portfolio.html" class="mobile-nav-link">Work</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </div>
+
+    <!-- ═══════════════ NAVIGATION ═══════════════ -->
+    <nav class="nav" id="mainNav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="logo">dealix<span class="logo-dot">.</span></a>
+
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="process.html" class="nav-link">Process</a>
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+                    <a href="portfolio.html" class="nav-link">Work</a>
+                    <div class="nav-cta-wrap">
+                        <a href="contact.html" class="btn btn-prime btn-sm">
+                            Start a Project
+                            <svg class="arrow-right btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero" id="hero">
+        <div class="hero-grid-bg"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="particles-container" id="particles"></div>
+
+        <!-- Rotating Rings -->
+        <div class="hero-rings">
+            <div class="ring ring-1"><div class="ring-node"></div></div>
+            <div class="ring ring-2"><div class="ring-node"></div></div>
+            <div class="ring ring-3"><div class="ring-node"></div></div>
+            <div class="ring ring-4"><div class="ring-node"></div></div>
+            <div class="ring-center-glow"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-availability">
+                    <span class="pulse-indicator"></span>
+                    ACCEPTING 3 PROJECTS THIS MONTH
+                </div>
+
+                <h1 class="hero-h1">
+                    <span class="line"><span class="line-inner">We Don't Build</span></span>
+                    <span class="line"><span class="line-inner">Websites. We Architect</span></span>
+                    <span class="line"><span class="line-inner"><span class="glow-text">Revenue Machines.</span></span></span>
+                </h1>
+
+                <p class="hero-sub">
+                    Your competitors have websites. You need a digital weapon — 
+                    engineered to command authority, eliminate doubt, and convert 
+                    every scroll into a business decision.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="contact.html" class="btn btn-prime">
+                        Claim Your Spot
+                        <svg class="arrow-right btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                    <a href="portfolio.html" class="btn btn-ghost">
+                        See The Proof
+                    </a>
+                </div>
+
+                <div class="hero-proof">
+                    <div class="proof-item">
+                        <div class="proof-number" data-count="50" data-suffix="+">0</div>
+                        <div class="proof-label">Projects Shipped</div>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-number" data-count="3.2" data-suffix="x">0</div>
+                        <div class="proof-label">Avg. Lead Increase</div>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-number">&lt;1s</div>
+                        <div class="proof-label">Load Speed Standard</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ MARQUEE ═══════════════ -->
+    <div class="marquee">
+        <div class="marquee-track">
+            <span class="marquee-item">Conversion Architecture <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Zero Templates <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Sub-Second Performance <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Psychological UI/UX <span class="marquee-dot"></span></span>
+            <span class="marquee-item">SEO-Grade Foundation <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Revenue-First Design <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Obsessive Craftsmanship <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Conversion Architecture <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Zero Templates <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Sub-Second Performance <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Psychological UI/UX <span class="marquee-dot"></span></span>
+            <span class="marquee-item">SEO-Grade Foundation <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Revenue-First Design <span class="marquee-dot"></span></span>
+            <span class="marquee-item">Obsessive Craftsmanship <span class="marquee-dot"></span></span>
+        </div>
+    </div>
+
+    <!-- ═══════════════ SERVICES ═══════════════ -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-eyebrow">What We Engineer</span>
+                <h2 class="section-heading">
+                    Not a Website.<br>
+                    A <span class="glow-text">Conversion Weapon.</span>
+                </h2>
+                <p class="section-desc">
+                    Every pixel calculated. Every interaction deliberate. 
+                    We architect digital experiences that don't just impress — 
+                    they systematically dismantle buying resistance.
+                </p>
+            </div>
+
+            <div class="services-layout">
+                <div class="glass service-card reveal reveal-d1">
+                    <div class="service-number">// 001</div>
+                    <div class="service-icon-wrap">⚡</div>
+                    <h3 class="service-name">Conversion Architecture</h3>
+                    <p class="service-text">
+                        Strategic layout engineering using scroll psychology, 
+                        attention mapping, and behavioral triggers. Every section 
+                        exists to move your visitor closer to becoming your client.
+                    </p>
+                    <span class="service-metric">Avg. 3.2x Lead Increase</span>
+                </div>
+
+                <div class="glass service-card reveal reveal-d2">
+                    <div class="service-number">// 002</div>
+                    <div class="service-icon-wrap">◆</div>
+                    <h3 class="service-name">Futuristic Interface Design</h3>
+                    <p class="service-text">
+                        Glassmorphism. Fluid motion. Precision micro-interactions. 
+                        Your brand won't look current — it'll look like it arrived 
+                        from 2030. That gap is your competitive moat.
+                    </p>
+                    <span class="service-metric">Zero Templates Used</span>
+                </div>
+
+                <div class="glass service-card reveal reveal-d3">
+                    <div class="service-number">// 003</div>
+                    <div class="service-icon-wrap">🚀</div>
+                    <h3 class="service-name">Obsessive Performance</h3>
+                    <p class="service-text">
+                        Sub-second loads. 95+ Lighthouse audits. Every image 
+                        compressed, every script deferred, every render path 
+                        optimized. Slow sites bleed money. Ours don't.
+                    </p>
+                    <span class="service-metric">95+ Performance Score</span>
+                </div>
+
+                <div class="glass service-card reveal reveal-d4">
+                    <div class="service-number">// 004</div>
+                    <div class="service-icon-wrap">🔍</div>
+                    <h3 class="service-name">SEO-Grade Foundation</h3>
+                    <p class="service-text">
+                        Semantic HTML. Structured data. Core Web Vitals compliance. 
+                        Meta architecture that search engines devour. We don't 
+                        promise rankings — we build the infrastructure they demand.
+                    </p>
+                    <span class="service-metric">Built for Indexing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ USP ═══════════════ -->
+    <section class="section usp-bg" id="why">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-eyebrow">The Dealix Difference</span>
+                <h2 class="section-heading">
+                    Normal Developers Code.<br>
+                    We <span class="glow-text">Weaponize Design.</span>
+                </h2>
+            </div>
+
+            <div class="usp-layout">
+                <div class="terminal reveal">
+                    <div class="terminal-bar">
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-title">dealix.config.js</span>
+                    </div>
+                    <div class="terminal-body">
+                        <span class="code-purple">const</span> <span class="code-white">dealix</span> <span class="code-dim">=</span> {<br>
+                        &nbsp;&nbsp;<span class="code-green">philosophy</span><span class="code-dim">:</span> <span class="code-cyan">"design-first, always"</span>,<br>
+                        &nbsp;&nbsp;<span class="code-green">templates</span><span class="code-dim">:</span> <span class="code-orange">false</span>,<br>
+                        &nbsp;&nbsp;<span class="code-green">priority</span><span class="code-dim">:</span> <span class="code-cyan">"revenue_per_pixel"</span>,<br>
+                        &nbsp;&nbsp;<span class="code-green">aesthetic</span><span class="code-dim">:</span> <span class="code-cyan">"2030_futuristic"</span>,<br>
+                        &nbsp;&nbsp;<span class="code-green">obsession</span><span class="code-dim">:</span> <span class="code-cyan">"unhealthy"</span>,<br>
+                        &nbsp;&nbsp;<span class="code-green">compromise</span><span class="code-dim">:</span> <span class="code-orange">undefined</span>,<br>
+                        <br>
+                        &nbsp;&nbsp;<span class="code-purple">deliver</span><span class="code-dim">(</span><span class="code-white">client</span><span class="code-dim">) {</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-purple">return</span> <span class="code-cyan">`digital_dominance`</span>;<br>
+                        &nbsp;&nbsp;<span class="code-dim">}</span><br>
+                        };<span class="terminal-cursor"></span>
+                    </div>
+                </div>
+
+                <div class="usp-list reveal">
+                    <div class="usp-item">
+                        <div class="usp-item-num">01</div>
+                        <div>
+                            <h4 class="usp-item-title">Design-First. No Exceptions.</h4>
+                            <p class="usp-item-desc">
+                                Code is our tool. Design is our weapon. Strategy is our 
+                                ammunition. Every project begins with deep brand psychology — 
+                                never a blank IDE.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="usp-item">
+                        <div class="usp-item-num">02</div>
+                        <div>
+                            <h4 class="usp-item-title">Templates Are for Amateurs.</h4>
+                            <p class="usp-item-desc">
+                                Every line of code is written for your brand. Every layout 
+                                is invented for your audience. Your digital identity should 
+                                be impossible to duplicate.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="usp-item">
+                        <div class="usp-item-num">03</div>
+                        <div>
+                            <h4 class="usp-item-title">We Measure in Revenue, Not Pixels.</h4>
+                            <p class="usp-item-desc">
+                                Beautiful design without business impact is digital decoration. 
+                                Every decision we make answers one question: does this make 
+                                your phone ring more?
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="usp-item">
+                        <div class="usp-item-num">04</div>
+                        <div>
+                            <h4 class="usp-item-title">Built for 2030. Delivered Today.</h4>
+                            <p class="usp-item-desc">
+                                Modern stack. Future-proof architecture. Your site won't 
+                                look dated in 6 months — it'll still be the most advanced 
+                                thing in your industry.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="section-center reveal">
+                <span class="section-eyebrow">Proof, Not Promises</span>
+                <h2 class="section-heading">
+                    What Happens When<br>
+                    <span class="glow-text">Design Meets Strategy.</span>
+                </h2>
+            </div>
+
+            <div class="testimonials-layout">
+                <div class="glass test-card reveal reveal-d1">
+                    <div class="test-quote-mark">"</div>
+                    <div class="test-stars">
+                        <svg class="test-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="test-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="test-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="test-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="test-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="test-text">
+                        "We went from a forgettable WordPress template to something that 
+                        makes prospects go silent in meetings — because they're staring at 
+                        our site. Lead flow tripled in 40 days. Dealix didn't give us a 
+                        website. They gave us an unfair advantage."
+                    </p>
+                    <div class="test-author">
+                        <div class="test-avatar">RK</div>
+                        <div>
+                            <div class="test-name">Rahul Kapoor</div>
+                            <div class="test-role">Founder, Kapoor & Associates Legal</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass test-card reveal reveal-d2">
+                    <div class="test-quote-mark">"</div>
+                    <div class="test-stars">
+                        <svg class="test-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="test-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="test-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="test-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="test-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="test-text">
+                        "I've burned money on 4 agencies. Each one said 'premium' and 
+                        delivered mediocre. Dealix is the first team where the result 
+                        actually exceeded the pitch. My clients now compliment my website 
+                        before they discuss business."
+                    </p>
+                    <div class="test-author">
+                        <div class="test-avatar">PS</div>
+                        <div>
+                            <div class="test-name">Priya Sharma</div>
+                            <div class="test-role">CEO, Elevate Consulting Group</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass test-card reveal reveal-d3">
+                    <div class="test-quote-mark">"</div>
+                    <div class="test-stars">
+                        <svg class="test-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="test-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="test-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="test-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg class="test-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="test-text">
+                        "The numbers speak. Bounce rate: down 58%. Session duration: 
+                        doubled. Qualified inquiries: up 280% in first quarter. This 
+                        wasn't an expense — it was the single highest-ROI investment 
+                        I've made this year."
+                    </p>
+                    <div class="test-author">
+                        <div class="test-avatar">AM</div>
+                        <div>
+                            <div class="test-name">Arjun Mehta</div>
+                            <div class="test-role">Co-Founder, NexGen SaaS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ CTA ═══════════════ -->
+    <section class="section final-cta">
+        <div class="cta-orb"></div>
+        <div class="container">
+            <div class="cta-inner reveal">
+                <span class="section-eyebrow">Your Move</span>
+                <h2 class="cta-h2">
+                    Every Day Without This<br>
+                    Is Revenue You'll<br>
+                    <span class="glow-text">Never Recover.</span>
+                </h2>
+                <p class="cta-desc">
+                    Your competitors are already investing in their digital presence. 
+                    The gap widens daily. Close it — starting with one conversation.
+                </p>
+                <div class="cta-btns">
+                    <a href="contact.html" class="btn btn-prime">
+                        Claim Your Spot Now
+                        <svg class="arrow-right btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                    <a href="pricing.html" class="btn btn-ghost">
+                        See Investment Options
+                    </a>
+                </div>
+                <div class="trust-signals">
+                    <span class="trust-item"><span class="trust-check">✓</span> Free Strategy Call</span>
+                    <span class="trust-item"><span class="trust-check">✓</span> Zero Obligation</span>
+                    <span class="trust-item"><span class="trust-check">✓</span> Response in 2 Hours</span>
+                    <span class="trust-item"><span class="trust-check">✓</span> Only 3 Slots / Month</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo">dealix<span class="logo-dot">.</span></a>
+                    <p>
+                        We don't build websites. We engineer digital weapons that command 
+                        attention and convert visitors into revenue. Based in India. 
+                        Building for businesses that refuse to blend in.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Navigate</h4>
+                    <div class="footer-links">
+                        <a href="index.html" class="footer-link">Home</a>
+                        <a href="process.html" class="footer-link">Process</a>
+                        <a href="pricing.html" class="footer-link">Pricing</a>
+                        <a href="portfolio.html" class="footer-link">Work</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Services</h4>
+                    <div class="footer-links">
+                        <a href="pricing.html" class="footer-link">Starter Website</a>
+                        <a href="pricing.html" class="footer-link">Premium Website</a>
+                        <a href="contact.html" class="footer-link">Custom Project</a>
+                        <a href="contact.html" class="footer-link">Maintenance</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Reach Us</h4>
+                    <div class="footer-links">
+                        <a href="mailto:hello@dealix.in" class="footer-link">hello@dealix.in</a>
+                        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="footer-link">WhatsApp</a>
+                        <a href="https://instagram.com/dealix.in" target="_blank" class="footer-link">Instagram</a>
+                        <a href="https://linkedin.com/company/dealix" target="_blank" class="footer-link">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bar">
+                <p>© 2025 Dealix.in — Engineered with obsession. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com/dealix.in" target="_blank" class="social-icon" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/company/dealix" target="_blank" class="social-icon" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="https://twitter.com/dealix_in" target="_blank" class="social-icon" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

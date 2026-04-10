@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Dealix | Let's Engineer Your Digital Dominance</title>
+    <meta name="description" content="Ready to invest in a website that actually generates revenue? Start with a free strategy call. Zero obligation. Response within 2 hours.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .custom-cursor{width:40px;height:40px;border:1.5px solid rgba(0,255,136,.5);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:99990;opacity:0;transition:opacity .3s ease;mix-blend-mode:difference}.custom-cursor.cursor-hover{width:60px;height:60px;border-color:rgba(0,255,136,.8);background:rgba(0,255,136,.05)}.cursor-dot{width:8px;height:8px;background:#00FF88;border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:99991;opacity:0;transition:opacity .3s ease}.cursor-dot.dot-hover{transform:scale(0)!important}
+
+        /* Contact-specific form success state */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .form-success.show {
+            display: block;
+        }
+
+        .form-success-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--neon-subtle);
+            border: 2px solid var(--neon);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 36px;
+            animation: successPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes successPop {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+
+        .form-success h3 {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .form-success p {
+            font-size: 15px;
+            color: var(--white-50);
+            line-height: 1.7;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Urgency banner */
+        .urgency-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 24px;
+            background: rgba(0, 255, 136, 0.04);
+            border: 1px solid var(--neon-border);
+            border-radius: var(--radius-md);
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--neon);
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .urgency-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--neon);
+            border-radius: 50%;
+            animation: urgPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes urgPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-transition" id="pageTransition"><span class="loader-text">DEALIX</span></div>
+    <div class="noise-overlay"></div>
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="cursor-dot" id="customCursorDot"></div>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="process.html" class="mobile-nav-link">Process</a>
+        <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+        <a href="portfolio.html" class="mobile-nav-link">Work</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav" id="mainNav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="logo">dealix<span class="logo-dot">.</span></a>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="process.html" class="nav-link">Process</a>
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+                    <a href="portfolio.html" class="nav-link">Work</a>
+                    <div class="nav-cta-wrap">
+                        <a href="contact.html" class="btn btn-prime btn-sm">Start a Project <svg class="arrow-right btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    </div>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="container">
+            <span class="page-hero-eyebrow">Let's Talk</span>
+            <h1 class="page-hero-title">
+                Your Revenue Upgrade<br>
+                Starts With <span class="glow-text">One Message.</span>
+            </h1>
+            <p class="page-hero-desc">
+                No sales scripts. No pressure. Just a direct conversation 
+                about what your business needs and whether we're the right 
+                team to build it. Simple.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+
+            <!-- Urgency -->
+            <div class="urgency-bar reveal">
+                <span class="urgency-dot"></span>
+                ONLY 3 PROJECT SLOTS AVAILABLE THIS MONTH — 1 REMAINING
+            </div>
+
+            <div class="contact-layout">
+
+                <!-- FORM -->
+                <div class="reveal">
+                    <div id="contactForm">
+                        <form class="contact-form" id="dealixForm" onsubmit="handleSubmit(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" placeholder="Rahul" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Kapoor">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="rahul@yourbusiness.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="phone">WhatsApp Number *</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 98765 43210" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="business">Business / Brand Name</label>
+                                <input type="text" id="business" name="business" class="form-input" placeholder="Your Company Name">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="plan">Which Plan Interests You? *</label>
+                                <select id="plan" name="plan" class="form-select" required>
+                                    <option value="" disabled selected>Select a plan</option>
+                                    <option value="starter">Starter Business Website (₹15K–25K)</option>
+                                    <option value="premium">Premium Business Website (₹40K–80K)</option>
+                                    <option value="custom">Custom / Enterprise Project</option>
+                                    <option value="unsure">Not sure yet — need guidance</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="timeline">When Do You Need This Live?</label>
+                                <select id="timeline" name="timeline" class="form-select">
+                                    <option value="" disabled selected>Select timeline</option>
+                                    <option value="asap">As soon as possible</option>
+                                    <option value="2weeks">Within 2 weeks</option>
+                                    <option value="1month">Within 1 month</option>
+                                    <option value="flexible">I'm flexible</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="message">Tell Us About Your Vision</label>
+                                <textarea id="message" name="message" class="form-textarea" placeholder="What does your business do? What's the primary goal for this website? Any specific features or design inspirations you have in mind..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-prime btn-full" id="submitBtn">
+                                Send & Claim Your Spot
+                                <svg class="arrow-right btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </button>
+
+                            <p style="font-size: 12px; color: var(--white-30); text-align: center; margin-top: 16px; line-height: 1.6;">
+                                By submitting, you agree to be contacted about your project. 
+                                We never spam. We never share your data. Ever.
+                            </p>
+                        </form>
+                    </div>
+
+                    <!-- Success State -->
+                    <div class="form-success" id="formSuccess">
+                        <div class="form-success-icon">✓</div>
+                        <h3>Message Received.</h3>
+                        <p>
+                            We'll review your project details and respond within 
+                            <strong style="color: var(--neon);">2 hours</strong> during 
+                            business hours. Check your WhatsApp — that's where 
+                            the magic begins.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CONTACT INFO SIDEBAR -->
+                <div class="contact-info reveal reveal-d2">
+
+                    <!-- Immediate Contact -->
+                    <div class="glass contact-info-card">
+                        <div class="contact-info-label">FASTEST RESPONSE</div>
+                        <div class="contact-info-value" style="color: var(--neon);">WhatsApp Us Directly</div>
+                        <div class="contact-info-desc" style="margin-bottom: 20px;">
+                            Skip the form. Get answers in minutes.
+                        </div>
+                        <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Dealix%2C%20I%27m%20interested%20in%20a%20premium%20website%20for%20my%20business.%20Let%27s%20talk." target="_blank" class="btn btn-prime btn-sm btn-full" style="font-size: 13px;">
+                            💬 Open WhatsApp
+                        </a>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="glass contact-info-card">
+                        <div class="contact-info-label">EMAIL</div>
+                        <a href="mailto:hello@dealix.in" class="contact-info-value" style="color: var(--white-90); transition: color 0.3s ease;">hello@dealix.in</a>
+                        <div class="contact-info-desc">For detailed proposals and documents.</div>
+                    </div>
+
+                    <!-- Response Guarantee -->
+                    <div class="glass contact-info-card">
+                        <div class="contact-info-label">OUR GUARANTEE</div>
+                        <div class="contact-info-value">2-Hour Response</div>
+                        <div class="contact-info-desc">
+                            During business hours (10AM–8PM IST). 
+                            We don't ghost. We don't delay. Every inquiry 
+                            gets a personal response.
+                        </div>
+                    </div>
+
+                    <!-- What Happens Next -->
+                    <div class="glass contact-info-card" style="border-color: var(--neon-border-hover); background: rgba(0, 255, 136, 0.02);">
+                        <div class="contact-info-label">WHAT HAPPENS NEXT</div>
+                        <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 8px;">
+                            <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                <div style="font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--neon); min-width: 24px;">01</div>
+                                <div>
+                                    <div style="font-family: var(--font-display); font-size: 14px; font-weight: 600;">We Review Your Details</div>
+                                    <div style="font-size: 12px; color: var(--white-30); margin-top: 2px;">Within 2 hours of submission</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                <div style="font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--neon); min-width: 24px;">02</div>
+                                <div>
+                                    <div style="font-family: var(--font-display); font-size: 14px; font-weight: 600;">Free Discovery Call</div>
+                                    <div style="font-size: 12px; color: var(--white-30); margin-top: 2px;">15-min call to understand your vision</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                <div style="font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--neon); min-width: 24px;">03</div>
+                                <div>
+                                    <div style="font-family: var(--font-display); font-size: 14px; font-weight: 600;">Custom Proposal</div>
+                                    <div style="font-size: 12px; color: var(--white-30); margin-top: 2px;">Tailored plan with exact scope & timeline</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                <div style="font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--neon); min-width: 24px;">04</div>
+                                <div>
+                                    <div style="font-family: var(--font-display); font-size: 14px; font-weight: 600;">We Begin Building</div>
+                                    <div style="font-size: 12px; color: var(--white-30); margin-top: 2px;">50% deposit locks your project slot</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Proof -->
+                    <div class="glass contact-info-card" style="text-align: center;">
+                        <div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 16px;">
+                            <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--neon), var(--neon-dim)); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 13px; color: #000; margin-left: -8px;">RK</div>
+                            <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #00e5ff, #0099cc); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 13px; color: #000; margin-left: -8px;">PS</div>
+                            <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #c084fc, #8b5cf6); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 13px; color: #000; margin-left: -8px;">AM</div>
+                            <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #fb923c, #ea580c); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 13px; color: #000; margin-left: -8px;">VN</div>
+                        </div>
+                        <div style="font-family: var(--font-display); font-size: 15px; font-weight: 600;">Join 50+ business owners</div>
+                        <div style="font-size: 13px; color: var(--white-30); margin-top: 4px;">who already made the smart investment.</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALTERNATIVE CTA STRIP -->
+    <section class="section" style="padding: 80px 0; background: linear-gradient(180deg, var(--void), rgba(0,255,136,0.02), var(--void));">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: center;" class="reveal">
+                <div class="glass" style="padding: 40px 28px;">
+                    <div style="font-size: 32px; margin-bottom: 16px;">💬</div>
+                    <div style="font-family: var(--font-display); font-size: 18px; font-weight: 600; margin-bottom: 8px;">WhatsApp</div>
+                    <div style="font-size: 13px; color: var(--white-50); margin-bottom: 20px; line-height: 1.6;">Instant response. Most clients start here.</div>
+                    <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Dealix%2C%20interested%20in%20discussing%20a%20project." target="_blank" class="btn btn-ghost btn-sm btn-full" style="font-size: 12px;">Message Now</a>
+                </div>
+                <div class="glass" style="padding: 40px 28px;">
+                    <div style="font-size: 32px; margin-bottom: 16px;">✉️</div>
+                    <div style="font-family: var(--font-display); font-size: 18px; font-weight: 600; margin-bottom: 8px;">Email</div>
+                    <div style="font-size: 13px; color: var(--white-50); margin-bottom: 20px; line-height: 1.6;">For proposals, documents, and detailed briefs.</div>
+                    <a href="mailto:hello@dealix.in" class="btn btn-ghost btn-sm btn-full" style="font-size: 12px;">Send Email</a>
+                </div>
+                <div class="glass" style="padding: 40px 28px;">
+                    <div style="font-size: 32px; margin-bottom: 16px;">📱</div>
+                    <div style="font-family: var(--font-display); font-size: 18px; font-weight: 600; margin-bottom: 8px;">Instagram</div>
+                    <div style="font-size: 13px; color: var(--white-50); margin-bottom: 20px; line-height: 1.6;">See our latest work. DM us anytime.</div>
+                    <a href="https://instagram.com/dealix.in" target="_blank" class="btn btn-ghost btn-sm btn-full" style="font-size: 12px;">Follow & DM</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CLOSING BLOCK -->
+    <section class="section final-cta" style="padding: 100px 0 120px;">
+        <div class="cta-orb"></div>
+        <div class="container">
+            <div class="cta-inner reveal">
+                <span class="section-eyebrow">One Last Thing</span>
+                <h2 class="cta-h2">
+                    The Best Time to Invest<br>
+                    Was Yesterday. The Next Best<br>
+                    <span class="glow-text">Is Right Now.</span>
+                </h2>
+                <p class="cta-desc" style="max-width: 540px;">
+                    Every day your business runs on a mediocre website is a day 
+                    you're losing clients to competitors who invested in their 
+                    digital presence. Don't let that be tomorrow too.
+                </p>
+                <div class="cta-btns">
+                    <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Dealix%2C%20I%27m%20ready%20to%20start%20my%20project.%20Let%27s%20talk." target="_blank" class="btn btn-prime">
+                        💬 WhatsApp Us — It Takes 10 Seconds
+                        <svg class="arrow-right btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+                <div class="trust-signals" style="margin-top: 32px;">
+                    <span class="trust-item"><span class="trust-check">✓</span> Free Strategy Call</span>
+                    <span class="trust-item"><span class="trust-check">✓</span> Zero Obligation</span>
+                    <span class="trust-item"><span class="trust-check">✓</span> 2-Hour Response</span>
+                    <span class="trust-item"><span class="trust-check">✓</span> Only 1 Slot Left</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo">dealix<span class="logo-dot">.</span></a>
+                    <p>We don't build websites. We engineer digital weapons that command attention and convert visitors into revenue.</p>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Navigate</h4>
+                    <div class="footer-links">
+                        <a href="index.html" class="footer-link">Home</a>
+                        <a href="process.html" class="footer-link">Process</a>
+                        <a href="pricing.html" class="footer-link">Pricing</a>
+                        <a href="portfolio.html" class="footer-link">Work</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Services</h4>
+                    <div class="footer-links">
+                        <a href="pricing.html" class="footer-link">Starter Website</a>
+                        <a href="pricing.html" class="footer-link">Premium Website</a>
+                        <a href="contact.html" class="footer-link">Custom Project</a>
+                        <a href="contact.html" class="footer-link">Maintenance</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-col-title">Reach Us</h4>
+                    <div class="footer-links">
+                        <a href="mailto:hello@dealix.in" class="footer-link">hello@dealix.in</a>
+                        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="footer-link">WhatsApp</a>
+                        <a href="https://instagram.com/dealix.in" target="_blank" class="footer-link">Instagram</a>
+                        <a href="https://linkedin.com/company/dealix" target="_blank" class="footer-link">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bar">
+                <p>© 2025 Dealix.in — Engineered with obsession.</p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com/dealix.in" target="_blank" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                    <a href="https://linkedin.com/company/dealix" target="_blank" class="social-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="https://twitter.com/dealix_in" target="_blank" class="social-icon" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+    <!-- Contact Form Handler -->
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+
+            const form = document.getElementById('dealixForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const formContainer = document.getElementById('contactForm');
+            const successState = document.getElementById('formSuccess');
+
+            // Validate required fields
+            const firstName = document.getElementById('firstName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const plan = document.getElementById('plan').value;
+
+            if (!firstName || !email || !phone || !plan) {
+                // Shake the button to indicate error
+                submitBtn.style.animation = 'shake 0.5s ease';
+                setTimeout(() => { submitBtn.style.animation = ''; }, 500);
+                return;
+            }
+
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <span style="display: inline-block; width: 18px; height: 18px; border: 2px solid #000; border-top-color: transparent; border-radius: 50%; animation: spin 0.6s linear infinite;"></span>
+                Sending...
+            `;
+
+            // Simulate form submission (replace with actual endpoint)
+            // For production, integrate with:
+            // - Web3Forms (https://web3forms.com) — Free, no backend
+            // - Formspree (https://formspree.io) — Simple endpoint
+            // - EmailJS (https://www.emailjs.com) — Direct email
+            // - Or your own serverless function
+
+            setTimeout(() => {
+                // Show success state
+                formContainer.style.display = 'none';
+                successState.classList.add('show');
+
+                // Scroll to success message
+                successState.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Optional: Send to WhatsApp as backup
+                // Uncomment the below to auto-open WhatsApp after submission
+                /*
+                const business = document.getElementById('business').value.trim();
+                const message = encodeURIComponent(
+                    `Hi Dealix! I just submitted a project inquiry.\n\n` +
+                    `Name: ${firstName}\n` +
+                    `Business: ${business || 'N/A'}\n` +
+                    `Plan: ${plan}\n` +
+                    `Email: ${email}\n\n` +
+                    `Looking forward to hearing from you!`
+                );
+                setTimeout(() => {
+                    window.open(`https://wa.me/91XXXXXXXXXX?text=${message}`, '_blank');
+                }, 2000);
+                */
+
+            }, 1500);
+        }
+
+        // Shake animation for validation error
+        const shakeStyle = document.createElement('style');
+        shakeStyle.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                20% { transform: translateX(-8px); }
+                40% { transform: translateX(8px); }
+                60% { transform: translateX(-6px); }
+                80% { transform: translateX(6px); }
+            }
+            @keyframes spin {
+                to { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(shakeStyle);
+    </script>
+</body>
+</html>
